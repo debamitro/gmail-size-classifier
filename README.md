@@ -2,7 +2,9 @@
 
 [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com)
 
-This web application connects to your Gmail account and classifies your emails based on their sizes into three categories: Small, Medium, and Large.
+This web application connects to your Gmail account and classifies your emails based on their sizes into three categories: Small, Medium, and Large. It processes the first 1000 emails, and generates a web page like this:
+
+![screenshot](screenshot.png)
 
 ## Setup Instructions
 

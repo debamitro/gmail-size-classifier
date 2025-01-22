@@ -6,6 +6,10 @@ This web application connects to your Gmail account and classifies your emails b
 
 ![screenshot](screenshot.png)
 
+Here is a small video about the initial version of this project
+
+[![Small video](https://img.youtube.com/vi/o4315MIy5RU/0.jpg)](https://www.youtube.com/watch?v=o4315MIy5RU)
+
 ## Setup Instructions
 
 1. Set up Google Cloud Project and Gmail API:
@@ -35,4 +39,5 @@ This web application connects to your Gmail account and classifies your emails b
 - Large: More than 1MB
 
 ## Security Note
+
 The application uses OAuth 2.0 for authentication and only requests read-only access to your Gmail account.

@@ -2,9 +2,15 @@
 
 [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com)
 
-This web application connects to your Gmail account and classifies your emails based on their sizes into three categories: Small, Medium, and Large. It processes the first 1000 emails, and generates a web page like this:
+## Introduction
+
+Gmail doesn't want to show you the size of your emails, but does complain when your mailbox is 95% full. This project is a safe privacy-aware solution to that. You can run it on your laptop or computer and use it to delete emails you never needed. Once you are done you can close this application.
+
+This is a web application which connects to your Gmail account and classifies your emails based on their sizes into three categories: Small, Medium, and Large. It processes the first 1000 emails, and generates a web page like this:
 
 ![screenshot](screenshot.png)
+
+If you want to process fewer or more emails you can do so.
 
 Here is a small video about the initial version of this project
 
@@ -34,6 +40,8 @@ Here is a small video about the initial version of this project
 
 ## Size Classifications
 
+These are explained on the web page generated, but here goes
+
 - Small: Less than 100KB
 - Medium: 100KB to 1MB
 - Large: More than 1MB
@@ -41,3 +49,15 @@ Here is a small video about the initial version of this project
 ## Security Note
 
 The application uses OAuth 2.0 for authentication and only requests read-only access to your Gmail account.
+
+## Changelog
+
+### March 25 2025
+
+* Added links to gmail messages
+* Added the capability to choose the number of emails scanned
+
+### Jan 15 2025
+
+First version
+

@@ -64,7 +64,12 @@ def index():
             logger.debug("No valid service, redirecting to login")
             return render_template('index.html', authenticated=False)
         
-        results = service.users().messages().list(userId='me', maxResults=1000).execute()
+        # Get max_results from query parameter, default to 1000
+        max_results = request.args.get('max_results', default=1000, type=int)
+        # Ensure max_results is between 1 and 5000
+        max_results = min(max(max_results, 1), 5000)
+        
+        results = service.users().messages().list(userId='me', maxResults=max_results).execute()
         messages = results.get('messages', [])
         
         classified_emails = {'Small': [], 'Medium': [], 'Large': []}
@@ -85,7 +90,8 @@ def index():
             classified_emails[category].append({
                 'subject': subject,
                 'size': size,
-                'size_formatted': f"{size / 1024:.1f}KB" if size < 1024 * 1024 else f"{size / (1024 * 1024):.1f}MB"
+                'size_formatted': f"{size / 1024:.1f}KB" if size < 1024 * 1024 else f"{size / (1024 * 1024):.1f}MB",
+                'thread_id': msg['threadId']
             })
             
             # Update category stats
